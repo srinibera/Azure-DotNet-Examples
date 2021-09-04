@@ -1,2 +1,2 @@
-# Azure DotNet Code Examples
-.NET applications with Azure Service integration code examples
+# AzureAD Authorization Code Samples 
+Code Samples to integrate Azure AD and authorize code with user roles and security group roles.
