@@ -21,11 +21,7 @@ namespace ExceptionHandling.API.Filters
                 case DataNotFoundException notFoundEx:
                     context.Result = new NotFoundObjectResult(new { Errors = new string[] { notFoundEx.Message } });
                     break;
-            }
-            //if (context.Exception is CommandValidationException validationEx)
-            //    context.Result = new OkObjectResult(new { Errors = validationEx.Errors.Values });                
-            //else if (context.Exception is )
-            //    context.Result = new OkObjectResult(new { Errors =new string[] { notFoundEx.Message }});
+            }             
             
             return base.OnExceptionAsync(context);
         }
