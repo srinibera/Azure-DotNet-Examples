@@ -1,0 +1,14 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net5.0</TargetFramework>
+    <UserSecretsId>64103860-b9bf-41a1-a0d0-d2643138e0e9</UserSecretsId>
+    <ApplicationInsightsResourceId>/subscriptions/d29da684-1b2b-4eb5-b69a-a60f1f824725/resourceGroups/Practice/providers/microsoft.insights/components/app-testdataapi-shared-002</ApplicationInsightsResourceId>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.ApplicationInsights.AspNetCore" Version="2.15.0" />
+    <PackageReference Include="Swashbuckle.AspNetCore" Version="5.6.3" />
+  </ItemGroup>
+
+</Project>
