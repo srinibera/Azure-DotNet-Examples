@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.Entity.Validation;
 using System.Linq;
 using System.Threading.Tasks;
 using ExceptionHandling.API.ExceptionHandlers;
@@ -20,6 +21,14 @@ namespace ExceptionHandling.API.Filters
                     break;
                 case DataNotFoundException notFoundEx:
                     context.Result = new NotFoundObjectResult(new { Errors = new string[] { notFoundEx.Message } });
+                    break;
+                case DbEntityValidationException enityEx:
+                    {                        
+                        var errorMessages = enityEx.EntityValidationErrors
+                            .SelectMany(x => x.ValidationErrors)
+                            .Select(x => x.ErrorMessage);
+                        context.Result = new BadRequestObjectResult(new { Errordata = errorMessages });
+                    }
                     break;
             }             
             
